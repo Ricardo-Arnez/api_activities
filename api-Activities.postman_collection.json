@@ -8,6 +8,9 @@
 	"item": [
 		{
 			"name": "get-activities",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [
@@ -16,6 +19,10 @@
 						"value": "text/plain; v=1.0"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://fakerestapi.azurewebsites.net/api/v1/Activities",
 					"protocol": "https",
@@ -63,6 +70,98 @@
 						"api",
 						"v1",
 						"Activities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-activities-id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain; v=1.0"
+					}
+				],
+				"url": {
+					"raw": "https://fakerestapi.azurewebsites.net/api/v1/Activities/25",
+					"protocol": "https",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Activities",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put-activities-id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain; v=1.0"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; v=1.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 11,\n    \"title\": \"running\",\n    \"dueDate\": \"2022-06-26T14:18:32.049Z\",\n    \"completed\": false\n}"
+				},
+				"url": {
+					"raw": "https://fakerestapi.azurewebsites.net/api/v1/Activities/11",
+					"protocol": "https",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Activities",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-activities-id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "https://fakerestapi.azurewebsites.net/api/v1/Activities/11",
+					"protocol": "https",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Activities",
+						"11"
 					]
 				}
 			},
